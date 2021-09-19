@@ -1,0 +1,153 @@
+.header {
+  grid-column: 1 / -1;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($blue-dark, 0.9),
+      rgba($primary-color-dark, 0.95)
+    ),
+    url('../assets/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+
+  display: grid;
+  grid-template-rows: max-content 1fr;
+
+  @media screen and (max-width: $bp-medium2) {
+    border-radius: 0;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 0;
+  }
+
+  &__navsection {
+    /// LEVANI DA NAVS YOFS
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation {
+    .icon {
+      display: none;
+      margin-right: 3rem;
+      position: relative;
+      z-index: 200;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    display: flex;
+    margin-right: 2rem;
+
+    .item {
+      margin-right: 1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-block;
+
+      text-transform: uppercase;
+      padding: 1rem;
+      transition: all 0.2s;
+
+      @include AnimatedOutline;
+
+      &:hover a {
+        color: $primary-color;
+      }
+
+      a,
+      a:link,
+      a:active {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+
+  /// NAVIGATIIIOOOOOOOOOOOON  [[[[]]]]
+  /////////////////////////////////////////////
+
+  @media only screen and (max-width: 600px) {
+    .navigation {
+      position: relative;
+      padding-top: 1.5rem;
+
+      .icon {
+        display: inline-block;
+      }
+    }
+
+    &__nav {
+      transition: opacity 0.5s;
+      position: absolute;
+      visibility: hidden;
+      display: none;
+
+      transform: translateX(-90%);
+      opacity: 0;
+      .icon {
+        margin-top: 5rem;
+        display: block;
+        cursor: pointer;
+      }
+
+      .item {
+        text-align: center;
+        font-size: 5rem;
+      }
+      .close {
+        margin-top: 3rem;
+        padding: 2rem 5rem;
+        border: 2px solid #fff;
+      }
+    }
+    .is-expanded {
+      transition: opacity 0.5s;
+      visibility: visible;
+      position: absolute;
+      top: 0;
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 105vw;
+      height: 100vh;
+      background-color: rgba(#111, 0.9);
+    }
+  }
+
+  /// NAVIGATIIIOOOOOOOOOOOON  [[[[]]]]
+  /////////////////////////////////////////////
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $bp-largest) {
+      & > * {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  font-size: 1.4rem;
+  background-color: $blue-dark;
+  opacity: 0.9;
+  width: 100%;
+  height: 8rem !important;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  box-shadow: $shadow-dark;
+}

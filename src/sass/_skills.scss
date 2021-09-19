@@ -1,0 +1,76 @@
+.skills {
+  grid-column: center-start / center-end;
+  padding: 4rem 0;
+
+  display: grid;
+  grid-template-rows: 10rem 1fr;
+
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-items: center;
+    column-gap: 7rem;
+    row-gap: 5rem;
+    margin: 0.5rem;
+
+
+    .item {
+      display: grid;
+      align-items: center;
+      gap: 2rem;
+      justify-items: center;
+      border-radius: 3rem;
+      padding: 3rem 5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      box-shadow: $shadow-light;
+      min-height: 10rem;
+      min-width: 20rem;
+      color: $text-color;
+
+      &__name {
+        width: 100%;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      &__img {
+        width: 5rem;
+      }
+
+      &:hover {
+        box-shadow: $shadow-medium;
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+
+//PROGRES BAR
+.progress-bar {
+  height: 2.2rem;
+  width: 100%;
+  border-radius: 5rem;
+  background-color: #ddd;
+}
+
+.filler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right bottom,
+    $primary-color,
+    $primary-color-dark
+  );
+  height: 100%;
+  color: $title-color;
+  border-radius: inherit;
+
+  h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
